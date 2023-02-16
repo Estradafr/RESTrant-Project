@@ -6,6 +6,22 @@ function Home() {
 		<Default>
 			<main>
 				<h1>HOME PAGE</h1>
+				<div>
+					<img
+						src="/images/homepage.jpeg"
+						alt="Burgers and Fries"
+					/>
+					<div>
+						Photo by{' '}
+						<a href="https://unsplash.com/@piak?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+							Josip Ivankovic
+						</a>{' '}
+						on{' '}
+						<a href="https://unsplash.com/photos/YEJnoRg-8mg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+							Unsplash
+						</a>
+					</div>
+				</div>
 				<a href="/restaurants">
 					<button className="btn btn-primary">Places Page</button>
 				</a>

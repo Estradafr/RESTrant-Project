@@ -1,4 +1,140 @@
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+
 h1 {
   text-align: center;
   color: navy;
+}
+
+h2 {
+  color: lightblue;
+}
+
+main {
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: lightblue;
+}
+
+nav {
+  background-color: navy;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 25px;
+}
+
+nav a {
+  color: white;
+  font-size: 1.5em;
+}
+
+nav a:hover {
+  color: lightblue;
+  text-decoration: none;
+}
+
+a {
+  color: navy;
+  text-decoration: none;
+}
+
+form {
+  display: inline;
+}
+
+.inactive {
+  color: gray;
+}
+
+.border {
+  border: 1px solid gray;
+}
+
+img {
+  height: 40rem;
+}
+
+/* 404 Page Styling */
+
+#notfound {
+  position: relative;
+  height: 100vh;
+}
+
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.notfound {
+  max-width: 767px;
+  width: 100%;
+  line-height: 1.4;
+  padding: 0px 15px;
+}
+
+.notfound .notfound-404 {
+  position: relative;
+  height: 150px;
+  line-height: 150px;
+  margin-bottom: 25px;
+}
+
+.notfound .notfound-404 h1 {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 186px;
+  font-weight: 900;
+  margin: 0px;
+  text-transform: uppercase;
+  background-size: cover;
+  background-position: center;
+}
+
+.notfound h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 10px;
+  color: black;
+}
+
+.notfound p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}
+
+.notfound a {
+  font-family: 'Titillium Web', sans-serif;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 1px;
+  margin-top: 15px;
+  transition: 0.2s all;
+}
+
+.notfound a:hover {
+  opacity: 0.8;
 }

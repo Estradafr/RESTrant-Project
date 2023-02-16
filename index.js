@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 // 404 Page Route
 app.get('*', (req, res) => {
-	res.render('error404');
+	res.render('Error404');
 });
 
 // Listen
