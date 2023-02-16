@@ -23,7 +23,12 @@ router.get('/', (req, res) => {
 	res.render('restaurants/index', {restaurants});
 });
 
-// NEW
+// POST/CREATE RESTAURANT
+router.post('/', (req, res) => {
+	res.send('POST /restaurants');
+});
+
+// NEW RESTAURANT PAGE
 router.get('/new', (req, res) => {
 	res.render('restaurants/new_restaurant');
 });

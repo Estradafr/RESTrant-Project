@@ -24,7 +24,7 @@ function Home() {
 				</div>
 				<br />
 				<a href="/restaurants">
-					<button className="btn btn-primary">Places Page</button>
+					<button className="btn btn-primary">Restaurants Page</button>
 				</a>
 			</main>
 		</Default>
