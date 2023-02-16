@@ -120,11 +120,14 @@ function new_form() {
 							/>
 						</label>
 					</div>
-					<input
-						className="btn btn-primary"
-						type="submit"
-						value="Add Restaurant"
-					/>
+					<div className="form-group">
+						<br />
+						<input
+							className="btn btn-primary"
+							type="submit"
+							value="Add Restaurant"
+						/>
+					</div>
 				</form>
 			</main>
 		</Default>
