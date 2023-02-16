@@ -48,6 +48,15 @@ router.delete('/:id', (req, res) => {
 	}
 });
 
+// PUT ROUTE
+router.put('/:id', (req, res) => {
+	if (!req.body.city) req.body.city = 'Somewhere';
+	if (!req.body.state) req.body.state = 'USA';
+
+	restaurants[req.params.id] = req.body;
+	res.redirect(`/restaurants/${req.params.id}`);
+});
+
 // EDIT
 router.get('/:id/edit', (req, res) => {
 	res.render('restaurants/edit_page', {

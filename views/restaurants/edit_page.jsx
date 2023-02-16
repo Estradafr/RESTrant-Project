@@ -127,7 +127,7 @@ function edit_page(data) {
 							<input
 								className="btn btn-primary"
 								type="submit"
-								value="Add Restaurant"
+								value="Edit Restaurant"
 							/>
 						</div>
 					</div>
