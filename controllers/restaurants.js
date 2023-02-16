@@ -1,32 +1,26 @@
 // Router
 const router = require('express').Router();
+const restaurants = require('../modules/restaurants.js');
 
 // Restaurants Index Page
 router.get('/', (req, res) => {
-	let restaurants = [
-		{
-			name: 'H-Thai-ML',
-			city: 'Seattle',
-			state: 'WA',
-			cuisines: 'Thai',
-			pic: 'http://placekitten.com/250/250',
-		},
-		{
-			name: 'Coding Cat Cafe',
-			city: 'Las Vegas',
-			state: 'NV',
-			cuisines: 'Bakery',
-			pic: 'http://placekitten.com/250/250',
-		},
-	];
-
 	res.render('restaurants/index', {restaurants});
 });
 
 // POST/CREATE RESTAURANT
 router.post('/', (req, res) => {
-	console.log(req.body);
-	res.send('POST /restaurants');
+	if (!req.body.pic) {
+		// Default IMG if not provided
+		req.body.pic = 'http://placekitten.com/400/400';
+	}
+	if (!req.body.city) {
+		req.body.city = 'Somewhere';
+	}
+	if (!req.body.state) {
+		req.body.state = 'USA';
+	}
+	restaurants.push(req.body);
+	res.redirect('/restaurants');
 });
 
 // NEW RESTAURANT PAGE
