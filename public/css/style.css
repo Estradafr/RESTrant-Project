@@ -70,6 +70,12 @@ img {
   height: 40rem;
 }
 
+/* Unsplash */
+
+#unsplash-credits:hover {
+  opacity: 0.8;
+}
+
 /* 404 Page Styling */
 
 #notfound {

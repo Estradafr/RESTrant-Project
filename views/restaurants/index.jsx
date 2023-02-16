@@ -11,6 +11,8 @@ function index_page(data) {
 					src={restaurant.pic}
 					alt={restaurant.name}
 				/>
+				<br />
+				<br />
 				<p className="text-center">
 					Located in {restaurant.city}, {restaurant.state}
 				</p>
@@ -22,6 +24,9 @@ function index_page(data) {
 			<main>
 				<h1>RESTAURANT INDEX PAGE</h1>
 				<div className="row"> {restaurantsFormatted} </div>
+				<a href="/">
+					<button className="btn btn-primary">Home Page</button>
+				</a>
 			</main>
 		</Default>
 	);
