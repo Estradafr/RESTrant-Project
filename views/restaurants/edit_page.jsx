@@ -5,7 +5,7 @@ function edit_page(data) {
 	return (
 		<Default>
 			<main>
-				<h1>Edit Place</h1>
+				<h1 className="mx-auto">Edit Place</h1>
 				<form
 					action={`/restaurants/${data.restaurant.id}?_method=PUT`}
 					method="POST"
@@ -41,6 +41,7 @@ function edit_page(data) {
 									className="form-control text-center"
 									id="city"
 									name="city"
+									value={data.restaurant.city}
 								/>
 							</label>
 						</div>
@@ -118,6 +119,7 @@ function edit_page(data) {
 									className="form-control text-center"
 									id="cuisines"
 									name="cuisines"
+									value={data.restaurant.cuisines}
 									required
 								/>
 							</label>

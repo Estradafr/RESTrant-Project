@@ -24,11 +24,8 @@ function index_page(data) {
 	return (
 		<Default>
 			<main>
-				<h1>RESTAURANT INDEX PAGE</h1>
+				<h1>Rave and Rant</h1>
 				<div className="row"> {restaurantsFormatted} </div>
-				<a href="/">
-					<button className="btn btn-primary">Home Page</button>
-				</a>
 			</main>
 		</Default>
 	);

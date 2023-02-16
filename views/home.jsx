@@ -22,10 +22,6 @@ function Home() {
 						</a>
 					</div>
 				</div>
-				<br />
-				<a href="/restaurants">
-					<button className="btn btn-primary">Restaurants Page</button>
-				</a>
 			</main>
 		</Default>
 	);

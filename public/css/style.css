@@ -1,3 +1,7 @@
+* {
+  font-family:'Courier New', Courier, monospace;
+}
+
 body {
   background-color: #242582;
   text-align: center;
@@ -15,6 +19,10 @@ h2 {
 p {
   color: gray;
   font-size: 1rem;
+}
+
+#p-data {
+  color: aliceblue;
 }
 
 main {
@@ -53,6 +61,12 @@ nav a:hover {
 a {
   color: white;
   text-decoration: none;
+}
+
+a:hover {
+  color: lightslategray ;
+  text-decoration: none;
+  transition: 0.2s;
 }
 
 form {

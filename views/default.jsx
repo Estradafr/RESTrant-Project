@@ -13,6 +13,11 @@ function Default(html) {
 				/>
 				<link
 					rel="stylesheet"
+					href="https://kit.fontawesome.com/b279321401.css"
+					crossorigin="anonymous"
+				/>
+				<link
+					rel="stylesheet"
 					href="/css/style.css"
 				/>
 			</head>

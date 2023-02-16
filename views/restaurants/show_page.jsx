@@ -8,18 +8,18 @@ function show_page(data) {
 				<h1>{data.restaurant.name}</h1>
 				<div>
 					<h2>Rating</h2>
-					<p>No ratings, yet!</p>
+					<p id="p-data">No ratings, yet!</p>
 				</div>
 				<div>
 					<h2>Description</h2>
-					<p>
+					<p id="p-data">
 						Located in {data.restaurant.city}, {data.restaurant.state}
 					</p>
-					<p>Specialties: {data.restaurant.cuisines}</p>
+					<p id="p-data">Specialties: {data.restaurant.cuisines}</p>
 				</div>
 				<div>
 					<h2>Comments</h2>
-					<p>No comments, yet!</p>
+					<p id="p-data">No comments, yet!</p>
 				</div>
 				<div>
 					{/* EDIT BUTTON */}
