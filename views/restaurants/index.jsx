@@ -2,10 +2,12 @@ const React = require('react');
 const Default = require('../default');
 
 function index_page(data) {
-	let restaurantsFormatted = data.restaurants.map((restaurant) => {
+	let restaurantsFormatted = data.restaurants.map((restaurant, index) => {
 		return (
 			<div className="col-sm-6">
-				<h2> {restaurant.name} </h2>
+				<h2>
+					<a href={`/restaurants/${index}`}>{restaurant.name}</a>
+				</h2>
 				<p className="text-center"> {restaurant.cuisines} </p>
 				<img
 					src={restaurant.pic}
