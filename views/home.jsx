@@ -6,6 +6,9 @@ function Home() {
 		<Default>
 			<main>
 				<h1>HOME PAGE</h1>
+				<a href="/restaurants">
+					<button className="btn btn-primary">Places Page</button>
+				</a>
 			</main>
 		</Default>
 	);

@@ -1,12 +1,13 @@
-// Modules
+// Modules and Globals
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv').config();
 const PORT = process.env.PORT;
 
-// View Engine
+// Express Settings
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
+app.use(express.static('public'));
 
 // Controller Route
 app.use('/restaurants', require('./controllers/restaurants'));
