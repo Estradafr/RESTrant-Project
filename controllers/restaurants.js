@@ -25,6 +25,7 @@ router.get('/', (req, res) => {
 
 // POST/CREATE RESTAURANT
 router.post('/', (req, res) => {
+	console.log(req.body);
 	res.send('POST /restaurants');
 });
 
