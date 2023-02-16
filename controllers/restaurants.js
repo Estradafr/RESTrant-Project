@@ -48,4 +48,12 @@ router.delete('/:id', (req, res) => {
 	}
 });
 
+// EDIT
+router.get('/:id/edit', (req, res) => {
+	res.render('restaurants/edit_page', {
+		restaurant: restaurants[req.params.id],
+		id: req.params.id,
+	});
+});
+
 module.exports = router;

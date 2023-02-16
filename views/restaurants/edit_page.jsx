@@ -1,13 +1,13 @@
 const React = require('react');
-const Default = require('../default');
+const Default = require('../default.jsx');
 
-function new_form() {
+function edit_page(data) {
 	return (
 		<Default>
 			<main>
-				<h1>Add a new restaurant</h1>
+				<h1>Edit Place</h1>
 				<form
-					action="/restaurants"
+					action={`/restaurants/${data.restaurant.id}?_method=PUT`}
 					method="POST"
 				>
 					<div className="row">
@@ -18,6 +18,7 @@ function new_form() {
 									className="form-control text-center"
 									id="name"
 									name="name"
+									value={data.restaurant.name}
 									required
 								/>
 							</label>
@@ -135,4 +136,5 @@ function new_form() {
 		</Default>
 	);
 }
-module.exports = new_form;
+
+module.exports = edit_page;
