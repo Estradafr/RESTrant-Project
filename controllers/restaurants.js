@@ -1,7 +1,7 @@
 // Router
 const router = require('express').Router();
 
-// Places Index Page
+// Restaurants Index Page
 router.get('/', (req, res) => {
 	res.render('restaurants/index');
 });
