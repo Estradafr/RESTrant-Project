@@ -12,11 +12,10 @@ function Home() {
 						alt="Burgers and Fries"
 					/>
 					<div>
-						Photo by{' '}
 						<a href="https://unsplash.com/@piak?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
 							Josip Ivankovic
 						</a>{' '}
-						on{' '}
+						<br />
 						<a href="https://unsplash.com/photos/YEJnoRg-8mg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
 							Unsplash
 						</a>

@@ -1,26 +1,31 @@
 body {
-  background-color: lightblue;
+  background-color: #242582;
   text-align: center;
 }
 
 h1 {
   text-align: center;
-  color: navy;
+  color: White;
 }
 
 h2 {
-  color: lightblue;
+  color: grey;
+}
+
+p {
+  color: gray;
+  font-size: 1rem;
 }
 
 main {
   margin-right: 20px;
   margin-left: 20px;
   padding: 20px;
-  background-color: lightblue;
+  background-color: #242582;
 }
 
 nav {
-  background-color: navy;
+  background-color: 242582;
   padding: 10px;
 }
 
@@ -40,12 +45,12 @@ nav a {
 }
 
 nav a:hover {
-  color: lightblue;
+  color: 242582;
   text-decoration: none;
 }
 
 a {
-  color: navy;
+  color: white;
   text-decoration: none;
 }
 
