@@ -2,12 +2,12 @@
 const router = require('express').Router();
 const restaurants = require('../modules/restaurants.js');
 
-// Restaurants Index Page
+// INDEX PAGE
 router.get('/', (req, res) => {
 	res.render('restaurants/index', {restaurants});
 });
 
-// POST/CREATE RESTAURANT
+// POST/CREATE RESTAURANT PAGE
 router.post('/', (req, res) => {
 	if (!req.body.pic) {
 		// Default IMG if not provided
@@ -36,6 +36,16 @@ router.get('/:id', (req, res) => {
 				id: req.params.id,
 		  })
 		: res.status(404).render('Error404');
+});
+
+// DELETE ROUTE
+router.delete('/:id', (req, res) => {
+	if (restaurants[req.params.id]) {
+		restaurants.splice(req.params.id, 1);
+		res.redirect('/restaurants');
+	} else {
+		res.status(404).render('Error404');
+	}
 });
 
 module.exports = router;
