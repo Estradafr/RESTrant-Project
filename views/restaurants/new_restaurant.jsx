@@ -122,6 +122,16 @@ function new_form() {
 							</label>
 						</div>
 						<div className="form-group col-m-6">
+							<label htmlFor="founded">
+								Founded Year
+								<input
+									className="form-control text-center"
+									id="founded"
+									name="founded"
+								/>
+							</label>
+						</div>
+						<div className="form-group col-m-6">
 							<br />
 							<input
 								className="btn btn-primary"
