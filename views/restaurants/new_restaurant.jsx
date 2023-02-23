@@ -1,11 +1,17 @@
 const React = require('react');
 const Default = require('../default');
 
-function new_form() {
+function new_form(data) {
+	let message = '';
+	if (data.message) {
+		message = <h4 className="alert-danger">{data.message}</h4>;
+	}
+
 	return (
 		<Default>
 			<main>
 				<h1>Add a new restaurant</h1>
+				{message}
 				<form
 					action="/restaurants"
 					method="POST"

@@ -40,7 +40,7 @@ function show_page(data) {
 					{/* DELETE BUTTON */}
 					<form
 						method="POST"
-						action={`/restaurants/${data.id}?_method=DELETE`}
+						action={`/restaurants/${data.restaurant.id}?_method=DELETE`}
 					>
 						<button
 							type="submit"

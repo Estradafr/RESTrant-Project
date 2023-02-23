@@ -25,8 +25,17 @@ router.post('/', (req, res) => {
 			res.redirect('/restaurants');
 		})
 		.catch((err) => {
-			console.log('err', err);
-			res.render('Error404');
+			if (err && err.name == 'ValidationError') {
+				let message = 'Validation Error: ';
+				for (var field in err.errors) {
+					message += `${field} was ${err.errors[field].value}. `;
+					message += `${err.errors[field].message}`;
+				}
+				console.log('Validation error message:', message);
+				res.render('restaurants/new_restaurant', {message});
+			} else {
+				res.render('error404');
+			}
 		});
 });
 
@@ -49,29 +58,37 @@ router.get('/:id', (req, res) => {
 
 // DELETE ROUTE
 router.delete('/:id', (req, res) => {
-	if (restaurants[req.params.id]) {
-		restaurants.splice(req.params.id, 1);
-		res.redirect('/restaurants');
-	} else {
-		res.status(404).render('Error404');
-	}
+	db.Restaurant.findByIdAndDelete(req.params.id)
+		.then(() => {
+			res.redirect('/restaurants');
+		})
+		.catch((err) => {
+			console.log('err', err);
+			res.render('error404');
+		});
 });
 
 // EDIT
 router.get('/:id/edit', (req, res) => {
-	res.render('restaurants/edit_page', {
-		restaurant: restaurants[req.params.id],
-		id: req.params.id,
-	});
+	db.Restaurant.findById(req.params.id)
+		.then((place) => {
+			res.render('restaurant/edit_page', {place});
+		})
+		.catch((err) => {
+			res.render('error404');
+		});
 });
 
 // PUT ROUTE
 router.put('/:id', (req, res) => {
-	if (!req.body.city) req.body.city = 'Somewhere';
-	if (!req.body.state) req.body.state = 'USA';
-
-	restaurants[req.params.id] = req.body;
-	res.redirect(`/restaurants/${req.params.id}`);
+	db.Restaurant.findByIdAndUpdate(req.params.id, req.body)
+		.then(() => {
+			res.redirect(`/restaurants/${req.params.id}`);
+		})
+		.catch((err) => {
+			console.log('err', err);
+			res.render('error404');
+		});
 });
 
 module.exports = router;
