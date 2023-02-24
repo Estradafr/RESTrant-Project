@@ -7,3 +7,4 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 module.exports.Restaurant = require('./restaurants');
+module.exports.Comment = require('./comments');

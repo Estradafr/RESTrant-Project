@@ -6,6 +6,7 @@ const restaurantSchema = new mongoose.Schema({
 	cuisines: {type: String, required: true},
 	city: {type: String, default: 'Somewhere'},
 	state: {type: String, default: 'USA'},
+	comments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}],
 	founded: {
 		type: Number,
 		min: [1673, 'Surely not that old?!'],
