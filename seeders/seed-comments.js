@@ -17,7 +17,7 @@ async function seed() {
 	restaurant.comments.push(comment.id);
 
 	//save the place now that it has comment
-	await place.save();
+	await restaurant.save();
 
 	// Exit the program
 	process.exit();

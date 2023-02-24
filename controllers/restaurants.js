@@ -47,7 +47,9 @@ router.get('/new', (req, res) => {
 // SHOW ROUTE
 router.get('/:id', (req, res) => {
 	db.Restaurant.findById(req.params.id)
+		.populate('comments')
 		.then((restaurant) => {
+			console.log(restaurant.comments);
 			res.render('restaurants/show_page', {restaurant});
 		})
 		.catch((err) => {

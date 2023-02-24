@@ -2,6 +2,21 @@ const React = require('react');
 const Default = require('../default');
 
 function show_page(data) {
+	let comments = <h3 className="inactive">No comments, yet!</h3>;
+	if (data.restaurant.comments.length) {
+		comments = data.restaurant.comments.map((c) => {
+			return (
+				<div className="border">
+					<h2 className="rant">{c.rant ? 'Rant! 😒' : 'Rave! 😎'}</h2>
+					<h4>{c.content}</h4>
+					<h3>
+						<stong>- {c.author}</stong>
+					</h3>
+					<h4>Rating: {c.stars}</h4>
+				</div>
+			);
+		});
+	}
 	return (
 		<Default>
 			<main>
@@ -24,7 +39,7 @@ function show_page(data) {
 				</div>
 				<div>
 					<h2>Comments</h2>
-					<p id="p-data">No comments, yet!</p>
+					{comments}
 				</div>
 				<div>
 					{/* EDIT BUTTON */}
