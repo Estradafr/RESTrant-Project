@@ -6,7 +6,7 @@ function show_page(data) {
 	if (data.restaurant.comments.length) {
 		comments = data.restaurant.comments.map((c) => {
 			return (
-				<div className="border">
+				<div>
 					<h2 className="rant">{c.rant ? 'Rant! 😒' : 'Rave! 😎'}</h2>
 					<h4>{c.content}</h4>
 					<h3>
@@ -39,6 +39,7 @@ function show_page(data) {
 				</div>
 				<div>
 					<h2>Comments</h2>
+					<hr />
 					{comments}
 				</div>
 				<div>
