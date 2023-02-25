@@ -37,11 +37,74 @@ function show_page(data) {
 					<p id="p-data">{data.restaurant.showEstablished()}</p>
 					<p id="p-data">Specialties: {data.restaurant.cuisines}</p>
 				</div>
-				<div>
-					<h2>Comments</h2>
-					<hr />
-					{comments}
-				</div>
+				<hr />
+				<h2>Comments</h2>
+				<div className="row">{comments}</div>
+				<hr />
+				<h2>Want to add your own Rave or Rant?</h2>
+				<form
+					// POST COMMENT METHOD
+					method="POST"
+					action={`/restaurants/${data.restaurant.id}/comment`}
+				>
+					<div className="row">
+						<div className="form-group col-sm-12">
+							<label htmlFor="content">Your comment here</label>
+							<textarea
+								id="content"
+								name="content"
+								className="form-control text-center"
+							></textarea>
+						</div>
+					</div>
+					<br />
+					<div className="row">
+						<div className="form-group col-sm-5">
+							<label htmlFor="author">Author</label>
+							<input
+								id="author"
+								name="author"
+								className="form-control text-center"
+							/>
+						</div>
+						<div className="form-group col-sm-5">
+							<label htmlFor="stars">Star Rating</label>
+							<input
+								type="range"
+								step="0.5"
+								min="1"
+								max="5"
+								id="stars"
+								name="stars"
+								className="form-range"
+							/>
+						</div>
+						<div className="form-group col-sm-2">
+							<label
+								htmlFor="rant"
+								className="form-check-label"
+								for="rant"
+							>
+								Rant?
+							</label>
+							<br />
+							<input
+								className="form-check-input"
+								type="checkbox"
+								id="rant"
+								name="rant"
+								value="yes"
+							/>
+						</div>
+					</div>
+					<br />
+					<input
+						type="submit"
+						className="btn btn-primary"
+						value="Add Comment"
+					/>
+				</form>
+				<hr />
 				<div>
 					{/* EDIT BUTTON */}
 					<a
@@ -56,6 +119,7 @@ function show_page(data) {
 					{/* DELETE BUTTON */}
 					<form
 						method="POST"
+						// DELETE METHOD BELOW
 						action={`/restaurants/${data.restaurant.id}?_method=DELETE`}
 					>
 						<button

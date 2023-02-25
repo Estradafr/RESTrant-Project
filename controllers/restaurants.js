@@ -73,8 +73,8 @@ router.delete('/:id', (req, res) => {
 // EDIT
 router.get('/:id/edit', (req, res) => {
 	db.Restaurant.findById(req.params.id)
-		.then((place) => {
-			res.render('restaurant/edit_page', {place});
+		.then((restaurant) => {
+			res.render('restaurants/edit_page', {restaurant});
 		})
 		.catch((err) => {
 			res.render('error404');
@@ -93,4 +93,33 @@ router.put('/:id', (req, res) => {
 		});
 });
 
+// POST COMMENT ROUTE
+router.post('/:id/comment', (req, res) => {
+	console.log('post comment', req.body);
+	if (req.body.author === '') {
+		req.body.author = undefined;
+	}
+	req.body.rant = req.body.rant ? true : false;
+	db.Restaurant.findById(req.params.id)
+		.then((restaurant) => {
+			db.Comment.create(req.body)
+				.then((comment) => {
+					restaurant.comments.push(comment.id);
+					restaurant
+						.save()
+						.then(() => {
+							res.redirect(`/restaurants/${req.params.id}`);
+						})
+						.catch((err) => {
+							res.render('error404');
+						});
+				})
+				.catch((err) => {
+					res.render('error404');
+				});
+		})
+		.catch((err) => {
+			res.render('error404');
+		});
+});
 module.exports = router;
