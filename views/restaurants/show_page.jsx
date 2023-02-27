@@ -3,7 +3,20 @@ const Default = require('../default');
 
 function show_page(data) {
 	let comments = <h3 className="inactive">No comments, yet!</h3>;
+	let rating = <h3 className="inactive">No ratings, yet!</h3>;
 	if (data.restaurant.comments.length) {
+		let sumRatings = data.restaurant.comments.reduce((tot, c) => {
+			return tot + c.stars;
+		}, 0);
+		let averageRating = Math.round(
+			sumRatings / data.restaurant.comments.length
+		);
+		let stars = '';
+		for (let i = 0; i < averageRating; i++) {
+			stars += '⭐️';
+		}
+
+		rating = <h3>{stars} stars</h3>;
 		comments = data.restaurant.comments.map((c) => {
 			return (
 				<div>
@@ -30,7 +43,7 @@ function show_page(data) {
 				</p>
 				<div>
 					<h2>Rating</h2>
-					<p id="p-data">No ratings, yet!</p>
+					{rating}
 				</div>
 				<div>
 					<h2>Description</h2>
