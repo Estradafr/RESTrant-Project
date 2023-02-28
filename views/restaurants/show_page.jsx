@@ -15,7 +15,6 @@ function show_page(data) {
 		for (let i = 0; i < averageRating; i++) {
 			stars += '⭐️';
 		}
-
 		rating = <h3>{stars} stars</h3>;
 		comments = data.restaurant.comments.map((c) => {
 			return (
@@ -26,6 +25,16 @@ function show_page(data) {
 						<stong>- {c.author}</stong>
 					</h3>
 					<h4>Rating: {c.stars}</h4>
+					<form
+						method="POST"
+						action={`/restaurants/${data.restaurant.id}/comment/${c.id}?_method=DELETE`}
+					>
+						<input
+							type="submit"
+							className="btn btn-danger"
+							value="Delete Comment"
+						/>
+					</form>
 				</div>
 			);
 		});
